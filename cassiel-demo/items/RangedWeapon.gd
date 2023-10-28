@@ -7,7 +7,7 @@ export (PackedScene) var projectile_scene:PackedScene
 export var projectile_speed = 40.0
 var should_shoot = true
 onready var attack_cooldown = $AttackCooldown
-var default_cooldown_time = 1.0
+var default_cooldown_time = 0.8
 
 func _ready():
 	print(PlayerStats.effects["stat_velocity_attack"])

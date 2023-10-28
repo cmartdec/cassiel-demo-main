@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 duration_wave = 35.0
-enemy_spawn_time = 0.65
+enemy_spawn_time = 0.4

@@ -96,6 +96,7 @@ func _on_Hurtbox_hurt(damage):
 
 func die():
 	print("player died")
+	delete_weapons_from_weapon_service()
 	SoundManager.play(game_over_sfx)
 	wave_ended_panel.visible = true
 	run_lost_label.visible = true
@@ -108,6 +109,9 @@ func die():
 	RunData.wave_ended = true
 	PlayerStats.clean_up()
 #	RunData.clean_up_stats()
+	
+func delete_weapons_from_weapon_service():
+	RunData.clean_up_weapons()
 	
 func _on_ItemAttractArea_area_entered(area):
 	if area.is_in_group("gold"):
