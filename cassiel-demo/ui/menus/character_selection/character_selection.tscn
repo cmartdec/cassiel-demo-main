@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/menus/character_selection/character_container_node.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ui/menus/title_screen/splash_art_post_processing.png" type="Texture" id=4]
 [ext_resource path="res://ui/menus/global/button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/menus/character_selection/character_selection.gd" type="Script" id=6]
+[ext_resource path="res://ui/menus/global/locked_container.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -49,6 +50,34 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="CharacterContainerNode" parent="Control" instance=ExtResource( 2 )]
+
+[node name="LockedContainer" parent="Control" instance=ExtResource( 7 )]
+margin_left = 254.0
+margin_top = 178.0
+margin_right = 254.0
+margin_bottom = 178.0
+rect_scale = Vector2( 0.84669, 0.802832 )
+
+[node name="LockedContainer2" parent="Control" instance=ExtResource( 7 )]
+margin_left = 295.0
+margin_top = 178.0
+margin_right = 295.0
+margin_bottom = 178.0
+rect_scale = Vector2( 0.84669, 0.802832 )
+
+[node name="LockedContainer3" parent="Control" instance=ExtResource( 7 )]
+margin_left = 337.0
+margin_top = 178.0
+margin_right = 337.0
+margin_bottom = 178.0
+rect_scale = Vector2( 0.84669, 0.802832 )
+
+[node name="LockedContainer4" parent="Control" instance=ExtResource( 7 )]
+margin_left = 379.0
+margin_top = 178.0
+margin_right = 379.0
+margin_bottom = 178.0
+rect_scale = Vector2( 0.84669, 0.802832 )
 
 [node name="Button" parent="." instance=ExtResource( 5 )]
 margin_left = 50.0
