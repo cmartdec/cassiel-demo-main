@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-fast-magic-game-spell-883.mp3-151e2ccd6000f053d567b7077a6fed4a.mp3str"
+
+[deps]
+
+source_file="res://items/priest_staff/mixkit-fast-magic-game-spell-883.mp3"
+dest_files=[ "res://.import/mixkit-fast-magic-game-spell-883.mp3-151e2ccd6000f053d567b7077a6fed4a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

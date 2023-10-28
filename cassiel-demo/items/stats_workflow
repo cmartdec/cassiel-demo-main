@@ -1,0 +1,39 @@
+-MAX HEALTH - The amount of damage the character can take before dying
+item will increase PlayerStats.effects["stat_health"] number
+
+-SPEED - how quickly the character moves
+item will increase PlayerStats.effects["stat_speed"]
+
+-ARMOR
+ 
+ player = 15 health
+ enemy =   5 damage
+
+without armor:
+ 15 - 5 = 10
+ 1 hit = player = 10 health
+
+with armor:
+ 15 - 5*0.5 = 12.5
+ 1 hit = player = 12.5 health
+
+-DAMAGE:
+ 
+ without damage:
+	 player = 5 damage
+	 enemy = 10 health
+	 player needs 2 hits to kill the enemy
+
+ with damage:
+ 	 player = 5 damage -> damage += *1.5
+ 	 enemy = 10 health
+
+-CRIT CHANCE
+
+-VELOCITY ATTACK (WEAPONS COOLDOWN):
+
+-SHOT SPEED (ITEM-DEPENDENT):
+
+
+
+

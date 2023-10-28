@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/skull_staff/skull_staff.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/skull_staff/skull_icon.png" type="Texture" id=2]
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=3]
+
+[node name="Item" instance=ExtResource( 3 )]
+item_scene = ExtResource( 1 )
+isWeapon = true
+price = 80
+item_name = "Skull Staff"
+description = "Cast a powered Throw a magic powered skull"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="DecreaseDescription" parent="ItemFloatingText/VBoxContainer2" index="2"]
+text = ""

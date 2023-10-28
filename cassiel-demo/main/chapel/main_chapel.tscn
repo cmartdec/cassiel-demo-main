@@ -1,0 +1,95 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://units/monsters/monster001/1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://units/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://maps/Chapel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://main/chapel/WaveManager.gd" type="Script" id=5]
+[ext_resource path="res://units/monsters/monster005/5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://units/monsters/monster002/2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://units/monsters/monster003/3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://units/monsters/monster004/4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://units/monsters/monster006/6.tscn" type="PackedScene" id=10]
+[ext_resource path="res://main/chapel/waves/wave1.tres" type="Resource" id=11]
+[ext_resource path="res://main/chapel/waves/wave2.tres" type="Resource" id=12]
+[ext_resource path="res://main/chapel/waves/wave3.tres" type="Resource" id=13]
+[ext_resource path="res://main/chapel/waves/wave4.tres" type="Resource" id=14]
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[node name="MainChapel" type="Node2D"]
+
+[node name="Chapel" parent="." instance=ExtResource( 4 )]
+position = Vector2( 352, 359 )
+z_index = -1
+
+[node name="WaveManager" type="Node2D" parent="."]
+script = ExtResource( 5 )
+waves = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+enemy_scene = ExtResource( 2 )
+player_scene = ExtResource( 3 )
+m_array = [ [ ExtResource( 2 ) ], [ ExtResource( 2 ), ExtResource( 10 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ], null ]
+
+[node name="Timer" type="Timer" parent="WaveManager"]
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="WaveManager"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WaveManager"]
+
+[node name="WaveTimerLabel" type="Label" parent="WaveManager/CanvasLayer"]
+margin_left = 11.0
+margin_top = 26.0
+margin_right = 637.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="CurrentWaveLabel" type="Label" parent="WaveManager/CanvasLayer"]
+margin_left = 291.0
+margin_top = 6.0
+margin_right = 340.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+text = "WAVE 1"
+
+[node name="WaveEndedPanel" type="Panel" parent="WaveManager/CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.533333 )
+margin_left = -24.0
+margin_top = -33.0
+margin_right = 729.0
+margin_bottom = 569.0
+
+[node name="WaveCompletedLabel" type="Label" parent="WaveManager/CanvasLayer"]
+visible = false
+margin_left = 205.0
+margin_top = 50.0
+margin_right = 443.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 9 )
+text = "WAVE COMPLETED"
+
+[node name="WaitTimerShop" type="Timer" parent="WaveManager"]
+wait_time = 3.0
+
+[node name="Gold" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Births" type="Node2D" parent="."]
+
+[connection signal="timeout" from="WaveManager/Timer" to="WaveManager" method="_on_Timer_timeout"]
+[connection signal="timeout" from="WaveManager/SpawnTimer" to="WaveManager" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="WaveManager/WaitTimerShop" to="WaveManager" method="_on_WaitTimerShop_timeout"]

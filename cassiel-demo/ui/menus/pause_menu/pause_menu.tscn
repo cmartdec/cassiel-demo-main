@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/menus/global/container_theme.tres" type="Theme" id=2]
+[ext_resource path="res://ui/menus/pause_menu/pause_menu.gd" type="Script" id=3]
+[ext_resource path="res://ui/menus/menu_options/menu_options.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 1 )
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_top = -49.0
+margin_right = 39.0
+margin_bottom = -9.0
+rect_scale = Vector2( 16.5501, 10.3922 )
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Menu"]
+margin_left = 203.0
+margin_top = 64.0
+margin_right = 437.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE MENU"
+
+[node name="ResumeButton" type="Button" parent="Menu"]
+margin_left = 228.0
+margin_top = 114.0
+margin_right = 394.0
+margin_bottom = 144.0
+text = "resume"
+
+[node name="OptionsButton" type="Button" parent="Menu"]
+margin_left = 228.0
+margin_top = 158.0
+margin_right = 394.0
+margin_bottom = 188.0
+text = "Options"
+
+[node name="ReturnMainMenuButton" type="Button" parent="Menu"]
+margin_left = 194.0
+margin_top = 203.0
+margin_right = 433.0
+margin_bottom = 233.0
+text = "RETURN TO MAIN MENU"
+
+[node name="MenuOptions" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[connection signal="pressed" from="Menu/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Menu/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Menu/ReturnMainMenuButton" to="." method="_on_ReturnMainMenuButton_pressed"]
+[connection signal="pressed" from="MenuOptions/Button" to="." method="_on_Button_pressed"]
+
+[editable path="MenuOptions"]
+[editable path="MenuOptions/Sliders/Master/MasterSlider"]
+[editable path="MenuOptions/Sliders/Sound/SoundSlider"]

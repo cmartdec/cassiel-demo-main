@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/magic_shotshell/magic_shotshell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/magic_shotshell/blastsoul_rocks.png" type="Texture" id=2]
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=3]
+
+[node name="BlastsoulRocksItem" instance=ExtResource( 3 )]
+item_scene = ExtResource( 1 )
+isWeapon = true
+item_name = "Blastsoul Rocks"
+description = "Throw 3 magic rocks with an area damage"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="DecreaseDescription" parent="ItemFloatingText/VBoxContainer2" index="2"]
+text = ""

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wand.mp3-5917ca3ed72c530e661717b22dca43ad.mp3str"
+
+[deps]
+
+source_file="res://main/shop/wand.mp3"
+dest_files=[ "res://.import/wand.mp3-5917ca3ed72c530e661717b22dca43ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

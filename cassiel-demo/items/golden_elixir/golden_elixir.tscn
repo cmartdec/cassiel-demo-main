@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/golden_elixir/golden_elixir.png" type="Texture" id=1]
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=2]
+
+[node name="GoldenElixir" instance=ExtResource( 2 )]
+effect = "stat_velocity_attack"
+effect_to_decrease = "stat_damage"
+effect_ui_to_decrease = "damage"
+value = -0.5
+decrease_value = 0.5
+ui_decrease_value = 50.0
+price = 100
+item_name = "Golden Elixir"
+description = "-50% Cooldown"
+key = "velocity_attack"
+ui_value = 50
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )

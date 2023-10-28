@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/sharp_knife/sharp_knife.png" type="Texture" id=2]
+
+[node name="SharpKnife" instance=ExtResource( 1 )]
+effect = "stat_damage"
+effect_to_decrease = "stat_velocity_attack"
+effect_ui_to_decrease = "velocity_attack"
+value = 1.0
+decrease_value = -0.5
+ui_decrease_value = 50.0
+price = 80
+item_name = "Sharp Knife"
+description = "+50% damage"
+key = "damage"
+ui_value = 50
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="DecreaseDescription" parent="ItemFloatingText/VBoxContainer2" index="2"]
+text = "+50% cooldown"

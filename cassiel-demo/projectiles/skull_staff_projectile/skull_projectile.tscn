@@ -1,0 +1,82 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://projectiles/skull_staff_projectile/Dark VFX 1 (40x32).png" type="Texture" id=1]
+[ext_resource path="res://projectiles/skull_staff_projectile/skull_projectile.gd" type="Script" id=2]
+[ext_resource path="res://overlap/Hitbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://effects/skull_projectile_destroy_effect.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 40, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 280, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 40, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 40, 32 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=12]
+resource_local_to_scene = true
+radius = 8.0
+
+[node name="SkullProjectile" type="Node2D"]
+script = ExtResource( 2 )
+projectile_destroy_effect_scene = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 11 )
+animation = "running"
+frame = 9
+speed_scale = 3.0
+playing = true
+
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4, 1 )
+rotation = 7.76109
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 12 )
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+
+[editable path="Hitbox"]

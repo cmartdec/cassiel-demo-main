@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://holy_bomb.gd" type="Script" id=1]
+[ext_resource path="res://projectiles/holy_bomb_projectile/holy_bomb_projectile.tscn" type="PackedScene" id=2]
+
+[node name="HolyBomb" type="Node2D"]
+script = ExtResource( 1 )
+projectile_scene = ExtResource( 2 )
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_AttackCooldown_timeout"]

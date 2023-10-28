@@ -1,0 +1,20 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://singletons/run_data.gd" type="Script" id=1]
+[ext_resource path="res://items/thunder_staff/thunder_staff_icon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/sharp_knife/sharp_knife.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/priest_staff/priest_staff_icon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://items/puke_ball/puke_ball_icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://items/wooden_shield/wooden_shield.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/bread/bread.tscn" type="PackedScene" id=7]
+[ext_resource path="res://items/kings_boots/king_boots_icon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/atomic_shot/atomic_shot.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/golden_elixir/golden_elixir.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/magic_shotshell/blastsoul_rocks_item.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/holy_bomb/holy_bomb_icon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://items/royal_ring/royal_ring_icon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://items/skull_staff/skull_staff_icon.tscn" type="PackedScene" id=14]
+
+[node name="RunData" type="Node"]
+script = ExtResource( 1 )
+shop_items = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]

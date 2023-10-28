@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/thunder_staff/thunder_staff.gd" type="Script" id=1]
+[ext_resource path="res://items/thunder_staff/energy_beam.wav" type="AudioStream" id=2]
+
+[node name="ThunderStaff" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -7.965
+pitch_scale = 1.36
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]

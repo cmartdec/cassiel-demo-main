@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skull_staff_sfx2.wav-9ffa669f2ad676c07b1c720f7b3fc72d.sample"
+
+[deps]
+
+source_file="res://items/skull_staff/skull_staff_sfx2.wav"
+dest_files=[ "res://.import/skull_staff_sfx2.wav-9ffa669f2ad676c07b1c720f7b3fc72d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

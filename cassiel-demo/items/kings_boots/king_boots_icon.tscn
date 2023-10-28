@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/kings_boots/king_boots_icon.png" type="Texture" id=2]
+
+[node name="KingBootsIcon" instance=ExtResource( 1 )]
+effect = "stat_speed"
+effect_to_decrease = "stat_health"
+effect_ui_to_decrease = "max_hp"
+value = 20.0
+decrease_value = 5.0
+ui_decrease_value = 5.0
+price = 35
+item_name = "King's Boots"
+description = "+20% speed"
+key = "speed"
+ui_value = 20
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="DecreaseDescription" parent="ItemFloatingText/VBoxContainer2" index="2"]
+text = "-20% max health"

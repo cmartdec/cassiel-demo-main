@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MMO_Game_Magic_Designed_Fire_Cast_05.mp3-3ace70a6ce7b17ec484d5e62aae72d46.mp3str"
+
+[deps]
+
+source_file="res://items/magic_shotshell/MMO_Game_Magic_Designed_Fire_Cast_05.mp3"
+dest_files=[ "res://.import/MMO_Game_Magic_Designed_Fire_Cast_05.mp3-3ace70a6ce7b17ec484d5e62aae72d46.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

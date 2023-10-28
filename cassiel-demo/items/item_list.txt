@@ -1,0 +1,38 @@
+TBD TBI(TO BE IMPLEMENTED) -> stat and balance of each item and weapon to have a balanced game
+
+two types of items:
+ 1. Weapons
+ 2. Items (Stats)
+
+
+STATS LIST:
+---
+1. max health *
+2. movement speed * 
+3. armor * 
+4. damage * 
+5. crit chance
+6. shot speed * 
+7. cooldown * 
+
+ 
+
+
+
+
+ITEMS LIST:
+---
+1. priest staff (weapon)
+2. thunder staff (weapon)
+3. puke ball (weapon)
+4. royal ring (weapon)
+5. wooden shield (stat item) - increases armor
+6. king's boots (stat item) - increases movement speed
+7. bread (stat item) - increases max health
+8. blastsoul rocks (weapon)
+9. skull staff (weapon) ??
+10.sharp knife (stat item) - increases damage 
+11.atomic shot (stat item) - increases shot speed 
+12.golden elixir (stat item) - decreases cooldown
+13.holy bomb (weapon)
+

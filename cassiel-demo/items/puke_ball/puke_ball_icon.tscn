@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://projectiles/puke_ball_projectile.png" type="Texture" id=2]
+[ext_resource path="res://items/puke_ball/puke_ball.tscn" type="PackedScene" id=3]
+
+[node name="PukeballIcon" instance=ExtResource( 1 )]
+item_scene = ExtResource( 3 )
+isWeapon = true
+item_name = "Puke Balls"
+description = "+2 puke balls"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="DecreaseDescription" parent="ItemFloatingText/VBoxContainer2" index="2"]
+text = ""
