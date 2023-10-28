@@ -5,6 +5,8 @@ const game_over_sfx = preload("res://ui/menus/end_run/player_died.wav")
 const hit_sfx = preload("res://units/player/hit_sfx.wav")
 var _camera_shake_duration = 0.1
 
+export (PackedScene) var floating_text
+
 onready var attackCooldown = $AttackCooldown
 onready var weapon_service = $WeaponService
 onready var animation_player = $MovementBehaviour/AnimationPlayer
@@ -83,6 +85,7 @@ func camera_shake(duration):
 		_camera_shake_duration = duration
 
 func _on_Hurtbox_hurt(damage):
+	display_floating_text(damage)
 	RunData.player_health -= damage * PlayerStats.effects["stat_armor"]
 	if RunData.player_health <= 0:
 		die()
@@ -119,6 +122,13 @@ func _on_ItemPickupArea_area_entered(area):
 		SoundManager2D.play(gold_collect_sfx, global_position, -12.0, pitch_scale_sfx)
 		RunData.gold += 1
 		gold_label.text = str(RunData.gold)
+
+func display_floating_text(damage):
+	var floating_text_instance: = floating_text.instance() as FloatingText
+	floating_text_instance.rect_position = global_position 
+	get_tree().get_root().add_child(floating_text_instance)
+	floating_text_instance.display(str(damage), 0.5, Color.red)	
+	
 
 func _on_HitTimer_timeout():
 	spriteMaterial.set_shader_param("active", false)

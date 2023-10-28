@@ -9,11 +9,13 @@ export  var spread = PI / 4
 
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_accept")):
-		display("24", 0.5)
+		pass
+#		display("24", 0.5)
 
 
-func display(content: String, duration: float):
+func display(content: String, duration: float, color: Color):
 	text = content 
+	modulate = color
 	var movement: = direction.rotated(rand_range( - spread / 2, spread / 2))
 	
 	

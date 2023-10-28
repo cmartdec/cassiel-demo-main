@@ -35,7 +35,7 @@ func display_floating_text(damage):
 	var floating_text_instance: = floating_text.instance() as FloatingText
 	floating_text_instance.rect_position = global_position 
 	get_tree().get_root().add_child(floating_text_instance)
-	floating_text_instance.display(str(damage), 0.5)
+	floating_text_instance.display(str(damage), 0.5, Color.white)
 
 func _on_Hurtbox_hurt(damage):
 	health -= damage * PlayerStats.effects["stat_damage"]
