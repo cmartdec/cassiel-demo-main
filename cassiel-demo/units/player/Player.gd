@@ -31,7 +31,6 @@ var damage_vignette_multiplier = 0.8
 
 	
 func _ready():
-	print("hello from players")
 #	health = max_health
 	add_weapons_to_player()			
 	wave_ended_panel.visible = false
