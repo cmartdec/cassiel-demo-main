@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/menus/shop/ShopMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://main/shop/shop.gd" type="Script" id=2]
 [ext_resource path="res://pickups/gold/gold_cube_box001.png" type="Texture" id=3]
 [ext_resource path="res://pickups/gold/gold_cube_box002.png" type="Texture" id=4]
+[ext_resource path="res://ui/menus/run/crit_chance_upgrade_ui.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/menus/run/cooldown_upgrade_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/menus/run/speed_upgrade_ui.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/menus/run/damage_upgrade_ui.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/menus/run/armor_upgrade_ui.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.5, 14.5 )
@@ -11,6 +16,28 @@ extents = Vector2( 38.5, 14.5 )
 [node name="Shop" type="Node2D" groups=["shop"]]
 position = Vector2( 8, 43 )
 script = ExtResource( 2 )
+upgrade_ui_cards = [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ) ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="AttenuateBackground" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 16.0836, 9.30465 )
+color = Color( 0, 0, 0, 0.666667 )
+
+[node name="CardPos1" type="Position2D" parent="CanvasLayer"]
+position = Vector2( 89, 257 )
+
+[node name="CardPos2" type="Position2D" parent="CanvasLayer"]
+position = Vector2( 294, 260 )
+
+[node name="CardPos3" type="Position2D" parent="CanvasLayer"]
+position = Vector2( 494, 261 )
+
+[node name="UpgradeCards" type="Node2D" parent="CanvasLayer"]
 
 [node name="ShopMap" parent="." instance=ExtResource( 1 )]
 position = Vector2( 319, 189 )
