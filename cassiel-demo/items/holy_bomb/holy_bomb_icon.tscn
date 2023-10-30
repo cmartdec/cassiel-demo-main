@@ -7,7 +7,7 @@
 [node name="HolyBombIcon" instance=ExtResource( 2 )]
 item_scene = ExtResource( 3 )
 isWeapon = true
-price = 70
+price = 55
 item_name = "holy bomb"
 description = "causes a big explosion"
 

@@ -7,6 +7,7 @@
 [node name="RoyalRingIcon" instance=ExtResource( 2 )]
 item_scene = ExtResource( 3 )
 isWeapon = true
+price = 70
 item_name = "Royal Ring"
 description = "create a circle of damage around you"
 

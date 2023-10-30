@@ -7,7 +7,7 @@
 [node name="Item" instance=ExtResource( 3 )]
 item_scene = ExtResource( 1 )
 isWeapon = true
-price = 80
+price = 60
 item_name = "Skull Staff"
 description = "Cast a powered Throw a magic powered skull"
 
