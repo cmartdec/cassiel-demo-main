@@ -10,7 +10,6 @@ onready var attack_cooldown = $AttackCooldown
 var default_cooldown_time = 0.8
 
 func _ready():
-	print(PlayerStats.effects["stat_velocity_attack"])
 	attack_cooldown.wait_time = default_cooldown_time * PlayerStats.effects["stat_velocity_attack"]
 
 
