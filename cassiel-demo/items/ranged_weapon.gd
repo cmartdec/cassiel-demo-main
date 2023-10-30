@@ -8,7 +8,12 @@ export var enemy_targets = []
 
 var should_shoot = true
 
+var default_wait_time = 1.0
+
 export (PackedScene) var projectile_scene:PackedScene
+
+func _ready():
+	attack_timer.wait_time = default_wait_time * PlayerStats.effects["stat_velocity_attack"] 
 
 func _physics_process(delta):
 	shoot()
