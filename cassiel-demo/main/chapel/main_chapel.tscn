@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://units/monsters/monster001/1.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://main/chapel/waves/wave2.tres" type="Resource" id=12]
 [ext_resource path="res://main/chapel/waves/wave3.tres" type="Resource" id=13]
 [ext_resource path="res://main/chapel/waves/wave4.tres" type="Resource" id=14]
+[ext_resource path="res://main/chapel/waves/wave5.tres" type="Resource" id=15]
+[ext_resource path="res://main/chapel/waves/wave6.tres" type="Resource" id=16]
 
 [sub_resource type="DynamicFont" id=7]
 size = 12
@@ -34,7 +36,7 @@ z_index = -1
 
 [node name="WaveManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
-waves = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+waves = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ]
 enemy_scene = ExtResource( 2 )
 player_scene = ExtResource( 3 )
 m_array = [ [ ExtResource( 2 ) ], [ ExtResource( 2 ), ExtResource( 10 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ) ], [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ], [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ) ], null ]
