@@ -1,7 +1,8 @@
 extends Node2D
 
 onready var attack_timer = $AttackCooldown
-const SHOOT_SFX = preload("res://items/puke_ball/puke_ball_sfx.wav")
+
+export var SHOOT:AudioStreamSample
 
 export var enemy_targets = []
 
@@ -22,7 +23,7 @@ func shoot():
 	if enemy_targets.size() > 0:
 		if should_shoot:
 			var random_pitch = rand_range(0.8, 1.1)
-			SoundManager2D.play(SHOOT_SFX, global_position, 0.0, random_pitch)
+			SoundManager2D.play(SHOOT, global_position, 0.0, random_pitch)
 			var projectile = projectile_scene.instance()
 			projectile.global_position = global_position
 			projectile.target = get_random_target()
@@ -38,8 +39,6 @@ func get_random_target():
 	if enemy_targets.size() > 0:
 		return enemy_targets[rand_index].global_position
 
-func _process(delta):
-	print(enemy_targets)
 
 func _on_Area2D_area_entered(area):
 	enemy_targets.append(area)

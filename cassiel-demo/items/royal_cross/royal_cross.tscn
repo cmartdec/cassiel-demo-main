@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://items/ranged_weapon.gd" type="Script" id=1]
-[ext_resource path="res://projectiles/bloody_curse_projectile/bloody_curse_projectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://items/puke_ball/puke_ball_sfx.wav" type="AudioStream" id=3]
+[ext_resource path="res://projectiles/royal_cross_projectile/royal_cross_projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/royal_cross/swish.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 120.004
+radius = 120.0
 
-[node name="BloodyCurse" type="Node2D"]
+[node name="RoyalCross" type="Node2D"]
 script = ExtResource( 1 )
 SHOOT = ExtResource( 3 )
 projectile_scene = ExtResource( 2 )

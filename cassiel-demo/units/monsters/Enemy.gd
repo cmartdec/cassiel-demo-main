@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const HIT_SFX = preload("res://units/monsters/hitHurt.wav")
 
+
 export (PackedScene) var floating_text
 
 export var health = 10
