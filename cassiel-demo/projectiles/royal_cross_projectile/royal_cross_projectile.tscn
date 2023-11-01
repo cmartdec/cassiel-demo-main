@@ -37,6 +37,7 @@ tracks/0/keys = {
 
 [node name="RoyalCrossProjectile" type="Node2D"]
 script = ExtResource( 3 )
+speed = 200
 should_rotate = true
 
 [node name="Sprite" type="Sprite" parent="."]

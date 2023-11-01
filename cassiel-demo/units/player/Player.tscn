@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://units/player/priest/player.png" type="Texture" id=1]
 [ext_resource path="res://units/player/Player.gd" type="Script" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://units/player/step_sounds/Steps_wood-014.ogg" type="AudioStream" id=18]
 [ext_resource path="res://items/royal_cross/royal_cross.tscn" type="PackedScene" id=19]
 [ext_resource path="res://visual_effects/floating_text/floating_text.tscn" type="PackedScene" id=20]
-[ext_resource path="res://items/bloody_curse/bloody_curse.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Shader" id=35]
 code = "shader_type canvas_item;
@@ -307,8 +306,6 @@ editor_draw_drag_margin = true
 wait_time = 0.1
 
 [node name="WeaponService" type="Node2D" parent="."]
-
-[node name="BloodyCurse" parent="WeaponService" instance=ExtResource( 21 )]
 
 [node name="RoyalCross" parent="WeaponService" instance=ExtResource( 19 )]
 

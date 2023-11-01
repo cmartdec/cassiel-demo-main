@@ -3,13 +3,15 @@ extends Node2D
 var target = Vector2.ZERO
 var angle = Vector2.ZERO
 
-var speed = 150 * PlayerStats.effects["stat_shoot_speed"]
+export var speed = 0
+
 
 export var should_rotate = false
 
 onready var animation_player = $AnimationPlayer
 
 func _ready():
+	speed *= PlayerStats.effects["stat_shoot_speed"]
 	if should_rotate:
 		animation_player.play("rotation")
 		
