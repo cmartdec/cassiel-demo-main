@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://singletons/music_manager.gd" type="Script" id=1]
+[ext_resource path="res://resources/music/music1.mp3" type="AudioStream" id=2]
+[ext_resource path="res://resources/music/music2.mp3" type="AudioStream" id=3]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource( 1 )
+music_tracks = [ ExtResource( 2 ), ExtResource( 3 ) ]

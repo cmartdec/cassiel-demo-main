@@ -59,6 +59,7 @@ _global_script_class_icons={
 config/name="Lost Priest"
 run/main_scene="res://ui/menus/title_screen/title_screen.tscn"
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
@@ -69,6 +70,7 @@ PlayerStats="*res://singletons/player_stats.gd"
 SoundManager="*res://singletons/sound_manager.gd"
 SoundManager2D="*res://singletons/sound_manager_2d.gd"
 ProgressData="*res://singletons/progress_data.gd"
+MusicManager="*res://singletons/music_manager.tscn"
 
 [display]
 

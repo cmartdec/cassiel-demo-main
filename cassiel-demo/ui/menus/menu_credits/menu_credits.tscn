@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/menus/global/button.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 12
 font_data = ExtResource( 1 )
 
@@ -22,6 +26,30 @@ margin_right = 566.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 text = "A game by Carlos Martinez (angry teddy)"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 167.0
+margin_top = 194.0
+margin_right = 370.0
+margin_bottom = 211.0
+custom_fonts/font = SubResource( 3 )
+text = "-K - Night Rider 87"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 140.0
+margin_right = 373.0
+margin_bottom = 157.0
+custom_fonts/font = SubResource( 3 )
+text = "music (artlist.io):"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 167.0
+margin_top = 169.0
+margin_right = 500.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 3 )
+text = "-Enid's Theme - night rider 87"
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 253.0

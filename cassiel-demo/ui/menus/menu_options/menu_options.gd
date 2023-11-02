@@ -23,3 +23,8 @@ func set_volume(value:float, bus:String):
 
 func _on_CheckButton_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
+
+
+func _on_SliderOption_value_changed(value):
+	ProgressData.settings.volume.music = value
+	set_volume(value, "Music")

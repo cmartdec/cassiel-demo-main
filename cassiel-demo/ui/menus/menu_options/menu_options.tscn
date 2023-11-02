@@ -133,6 +133,7 @@ margin_bottom = 328.0
 
 [connection signal="value_changed" from="Sliders/Master/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
 [connection signal="value_changed" from="Sliders/Sound/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
+[connection signal="value_changed" from="Sliders/Music/SliderOption" to="." method="_on_SliderOption_value_changed"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_CheckButton_toggled"]
 
 [editable path="Sliders/Master/MasterSlider"]
