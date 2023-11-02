@@ -22,7 +22,7 @@ func _on_Button_pressed():
 
 
 func _on_QuitButton_pressed():
-	ProgressData.save()
+#	ProgressData.save()
 	get_tree().quit()
 
 

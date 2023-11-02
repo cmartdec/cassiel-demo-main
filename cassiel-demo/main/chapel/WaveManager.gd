@@ -3,6 +3,7 @@ extends Node2D
 onready var timer = $Timer
 onready var spawn_timer = $SpawnTimer
 onready var wave_completed_label = $CanvasLayer/WaveCompletedLabel
+onready var run_completed_label = $CanvasLayer/RunCompletedLabel
 onready var panel_wave_ended = $CanvasLayer/WaveEndedPanel
 onready var enemies = get_parent().get_node("Enemies")
 onready var births_container = get_parent().get_node("Births")
@@ -52,6 +53,8 @@ func _ready():
 	timer.start()
 
 func set_wave_data(current_wave):
+	if current_wave == 10:
+		RunData.final_wave = true
 	remaining_seconds = waves[current_wave-1].duration_wave
 	spawn_timer.wait_time = waves[current_wave-1].enemy_spawn_time
 
@@ -105,7 +108,16 @@ func _on_wave_ended():
 	RunData.player_in_shop = true
 	for e in enemies.get_children():
 		e.queue_free()
-	
+
+func _on_run_ended():
+	SoundManager.play(wave_completed_sfx)
+	panel_wave_ended.visible = true
+	wave_timer_label.visible = false
+	current_wave_label.visible = false
+	run_completed_label.visible = true
+	RunData.wave_ended = true
+	for e in enemies.get_children():
+		e.queue_free()
 
 func _on_Timer_timeout():
 	if !RunData.wave_ended:
@@ -117,7 +129,10 @@ func _on_Timer_timeout():
 			wave_timer_label.text = str(remaining_seconds)
 			timer.start()
 		else:
-			_on_wave_ended()
+			if RunData.final_wave:
+				_on_run_ended()
+			else:
+				_on_wave_ended()
 
 func _on_SpawnTimer_timeout():
 	should_spawn = true

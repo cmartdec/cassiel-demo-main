@@ -15,6 +15,8 @@ export var weapons = []
 export var shop_items = []
 #player stats
 
+export var final_wave = false
+
 export var current_stats = {"max_hp": 0, "speed": 0, "armor": 0, "damage": 0, "crit_chance": 0, "shot_speed": 0, "velocity_attack": 0, "null": 0}
 
 export var items = []
@@ -25,6 +27,8 @@ export var dev_mode = false
 #export var damage = 0.5
 # damage implemented?? - item that give you 50% more damage
 
+func _ready():
+	ProjectSettings.set_setting("application/config/name", "cassiel")
 
 func clean_up_stats():
 	current_stats = {"max_hp": 0, "speed": 0, "armor": 0, "damage": 0, "crit_chance": 0, "shot_speed": 0, "velocity_attack": 0, "null": 0}

@@ -30,15 +30,16 @@ func apply_settings():
 	
 
 func load_game_file():
-	var save_file = File.new()
-	
-	save_file.open(SAVE_PATH, File.READ)
-	
-	var saved_settings:Dictionary = parse_json(save_file.get_line())
-	
-	settings = Utils.merge_dictionaries(settings, saved_settings)
-	
-	save_file.close()
+	pass
+#	var save_file = File.new()
+#
+#	save_file.open(SAVE_PATH, File.READ)
+#
+#	var saved_settings:Dictionary = parse_json(save_file.get_line())
+#
+#	settings = Utils.merge_dictionaries(settings, saved_settings)
+#
+#	save_file.close()
 
 
 
