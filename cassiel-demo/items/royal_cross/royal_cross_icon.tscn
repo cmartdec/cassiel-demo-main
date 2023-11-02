@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/royal_cross/royal_cross.png" type="Texture" id=1]
+[ext_resource path="res://items/item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/royal_cross/royal_cross.tscn" type="PackedScene" id=3]
+
+[node name="RoyalCrossIcon" instance=ExtResource( 2 )]
+item_scene = ExtResource( 3 )
+isWeapon = true
+price = 60
+item_name = "Royal Cross"
+description = "Throw a royal cross to a random direction"
+
+[node name="Sprite" parent="." index="0"]
+rotation = 0.764454
+texture = ExtResource( 1 )

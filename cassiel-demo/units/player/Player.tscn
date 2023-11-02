@@ -18,7 +18,7 @@
 [ext_resource path="res://units/player/step_sounds/Steps_wood-012.ogg" type="AudioStream" id=16]
 [ext_resource path="res://units/player/step_sounds/Steps_wood-013.ogg" type="AudioStream" id=17]
 [ext_resource path="res://units/player/step_sounds/Steps_wood-014.ogg" type="AudioStream" id=18]
-[ext_resource path="res://items/royal_cross/royal_cross.tscn" type="PackedScene" id=19]
+[ext_resource path="res://items/priest_staff/priest_staff.tscn" type="PackedScene" id=19]
 [ext_resource path="res://visual_effects/floating_text/floating_text.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Shader" id=35]
@@ -307,7 +307,7 @@ wait_time = 0.1
 
 [node name="WeaponService" type="Node2D" parent="."]
 
-[node name="RoyalCross" parent="WeaponService" instance=ExtResource( 19 )]
+[node name="PriestStaff" parent="WeaponService" instance=ExtResource( 19 )]
 
 [node name="UI" type="CanvasLayer" parent="."]
 

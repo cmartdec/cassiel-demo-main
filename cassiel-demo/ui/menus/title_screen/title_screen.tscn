@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ui/menus/pages/main_menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/menus/title_screen/dungeon background 3 (1).png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/menus/title_screen/splash_art_post_processing.png" type="Texture" id=5]
 [ext_resource path="res://ui/menus/title_screen/title_screen_menus.gd" type="Script" id=6]
 [ext_resource path="res://ui/menus/title_screen/title_screen.gd" type="Script" id=7]
+[ext_resource path="res://ui/menus/menu_credits/menu_credits.tscn" type="PackedScene" id=8]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -66,11 +67,17 @@ margin_bottom = 323.0
 [node name="MenuOptions" parent="Menus" instance=ExtResource( 4 )]
 visible = false
 
+[node name="MenuCredits" parent="Menus" instance=ExtResource( 8 )]
+visible = false
+
 [connection signal="pressed" from="Menus/MainMenu/VBoxContainer/OptionsButton" to="Menus" method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Menus/MainMenu/VBoxContainer/CreditsButton" to="Menus" method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="Menus/MainMenu/VBoxContainer/QuitButton" to="Menus" method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="Menus/MenuOptions/Button" to="Menus" method="_on_Button_pressed"]
+[connection signal="pressed" from="Menus/MenuCredits/Button" to="Menus" method="_on_Back_Button_of_Credits_pressed"]
 
 [editable path="Menus/MainMenu"]
 [editable path="Menus/MenuOptions"]
 [editable path="Menus/MenuOptions/Sliders/Master/MasterSlider"]
 [editable path="Menus/MenuOptions/Sliders/Sound/SoundSlider"]
+[editable path="Menus/MenuCredits"]
