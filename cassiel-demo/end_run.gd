@@ -11,4 +11,5 @@ func _ready():
 
 func _on_Button_pressed():
 	RunData.clean_up_stats()
+	RunData.player_died()
 	get_tree().change_scene(MenuData.title_screen_scene)
