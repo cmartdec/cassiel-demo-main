@@ -7,7 +7,7 @@
 [node name="BloodyCurseItem" instance=ExtResource( 3 )]
 item_scene = ExtResource( 1 )
 isWeapon = true
-price = 75
+price = 50
 item_name = "Bloody Curse"
 description = "Throw bloody balls"
 

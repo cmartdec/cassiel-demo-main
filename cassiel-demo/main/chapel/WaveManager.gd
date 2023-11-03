@@ -12,7 +12,7 @@ onready var current_wave_label = $CanvasLayer/CurrentWaveLabel
 onready var wait_timer_shop = $WaitTimerShop
 export var remaining_seconds = 0
 export var current_wave = RunData.current_wave
-
+onready var timer_to_main_menu = $TimerToMainMenu
 
 export var waves = []
 
@@ -115,6 +115,7 @@ func _on_run_ended():
 	wave_timer_label.visible = false
 	current_wave_label.visible = false
 	run_completed_label.visible = true
+	timer_to_main_menu.start()
 	RunData.wave_ended = true
 	for e in enemies.get_children():
 		e.queue_free()
@@ -141,5 +142,5 @@ func _on_SpawnTimer_timeout():
 func _on_WaitTimerShop_timeout():
 	get_tree().change_scene("res://main/shop/Shop.tscn")
 
-
-	
+func _on_TimerToMainMenu_timeout():
+	get_tree().change_scene(MenuData.title_screen_scene)

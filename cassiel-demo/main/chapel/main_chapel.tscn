@@ -103,6 +103,9 @@ text = "RUN WON"
 [node name="WaitTimerShop" type="Timer" parent="WaveManager"]
 wait_time = 3.0
 
+[node name="TimerToMainMenu" type="Timer" parent="WaveManager"]
+wait_time = 8.0
+
 [node name="Gold" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
@@ -112,3 +115,4 @@ wait_time = 3.0
 [connection signal="timeout" from="WaveManager/Timer" to="WaveManager" method="_on_Timer_timeout"]
 [connection signal="timeout" from="WaveManager/SpawnTimer" to="WaveManager" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="WaveManager/WaitTimerShop" to="WaveManager" method="_on_WaitTimerShop_timeout"]
+[connection signal="timeout" from="WaveManager/TimerToMainMenu" to="WaveManager" method="_on_TimerToMainMenu_timeout"]
