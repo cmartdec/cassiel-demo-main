@@ -6,6 +6,10 @@ export (PackedScene) var spell_scene:PackedScene
 var targets = []
 onready var attack_cooldown_timer = $AttackCooldownTimer
 var should_shoot = true
+var default_cooldown_time = 4.0
+
+func _ready():
+	attack_cooldown_timer.wait_time = default_cooldown_time * PlayerStats.effects["stat_velocity_attack"]
 
 
 func _physics_process(delta):

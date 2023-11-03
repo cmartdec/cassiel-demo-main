@@ -7,8 +7,14 @@ export(PackedScene) var projectile_scene:PackedScene
 onready var attack_cooldown_timer = $AttackCooldownTimer
 var should_shoot = true
 
+export var default_wait_time = 2.0
+
+func _ready():
+	attack_cooldown_timer.wait_time = default_wait_time * PlayerStats.effects["stat_velocity_attack"]
+
 func _physics_process(delta):
-	shoot()
+	if !RunData.wave_ended and !RunData.player_in_shop:
+		shoot()
 	
 	
 func shoot():

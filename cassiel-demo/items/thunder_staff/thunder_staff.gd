@@ -9,6 +9,10 @@ var time_before_spawn = 60.0
 var should_shoot = true
 
 var thunder_staff_projectile
+export var default_wait_time = 2.0
+
+func _ready():
+	cooldown_timer.wait_time = default_wait_time * PlayerStats.effects["stat_velocity_attack"]
 
 func _physics_process(delta):
 	if !RunData.player_in_shop:

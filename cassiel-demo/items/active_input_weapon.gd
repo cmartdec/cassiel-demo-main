@@ -7,6 +7,11 @@ const shot_sfx = preload("res://items/royal_cross/swish.wav")
 
 var should_shoot = true
 
+export var default_wait_time = 0.8
+
+func _ready():
+	attack_timer.wait_time = default_wait_time * PlayerStats.effects["stat_velocity_attack"]
+
 func _physics_process(delta):
 	if !RunData.wave_ended and !RunData.player_in_shop:
 		shoot()
