@@ -1,9 +1,36 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/menus/global/slider_option.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/menus/global/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/menus/menu_options/menu_options.gd" type="Script" id=4]
+[ext_resource path="res://ui/hud/check_button_off.png" type="Texture" id=5]
+[ext_resource path="res://ui/hud/check_button_on.png" type="Texture" id=6]
+[ext_resource path="res://ui/hud/grabber.png" type="Texture" id=7]
+[ext_resource path="res://ui/hud/grabber_highlight.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Theme" id=6]
+CheckButton/icons/off = ExtResource( 5 )
+CheckButton/icons/on = ExtResource( 6 )
+CheckButton/styles/focus = null
+HSlider/icons/grabber = ExtResource( 7 )
+HSlider/icons/grabber_highlight = ExtResource( 8 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/grabber_area_highlight = SubResource( 8 )
+HSlider/styles/slider = SubResource( 9 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -27,6 +54,7 @@ font_data = ExtResource( 1 )
 [node name="MenuOptions" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = SubResource( 6 )
 script = ExtResource( 4 )
 
 [node name="SoundSettingsTitle" type="Label" parent="."]
