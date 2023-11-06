@@ -1,14 +1,48 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/menus/pages/main_menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/menus/title_screen/dungeon background 3 (1).png" type="Texture" id=2]
-[ext_resource path="res://ui/menus/title_screen/head.png" type="Texture" id=3]
 [ext_resource path="res://ui/menus/menu_options/menu_options.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/menus/title_screen/splash_art_post_processing.png" type="Texture" id=5]
 [ext_resource path="res://ui/menus/title_screen/title_screen_menus.gd" type="Script" id=6]
 [ext_resource path="res://ui/menus/title_screen/title_screen.gd" type="Script" id=7]
 [ext_resource path="res://ui/menus/menu_credits/menu_credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://resources/fonts/Daydream.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform vec4 bg_color: hint_color;
+
+float rand(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+void fragment() {
+	float size = 100.0;
+	float prob = 0.9;
+	vec2 pos = floor(1.0 / size * FRAGCOORD.xy);
+	float color = 0.0;
+	float starValue = rand(pos);
+
+	if (starValue > prob)
+	{
+		vec2 center = size * pos + vec2(size, size) * 0.5;
+		float t = 0.9 + 0.2 * sin(TIME * 8.0 + (starValue - prob) / (1.0 - prob) * 45.0);
+		color = 1.0 - distance(FRAGCOORD.xy, center) / (0.5 * size);
+		color = color * t / (abs(FRAGCOORD.y - center.y)) * t / (abs(FRAGCOORD.x - center.x));
+	}
+	else if (rand(SCREEN_UV.xy / 20.0) > 0.996)
+	{
+		float r = rand(SCREEN_UV.xy);
+		color = r * (0.85 * sin(TIME * (r * 5.0) + 720.0 * r) + 0.95);
+	}
+	COLOR = vec4(vec3(color),1.0) + bg_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/bg_color = null
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -21,16 +55,6 @@ margin_left = 1.0
 margin_right = 1.0
 script = ExtResource( 7 )
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-visible = false
-margin_left = 251.0
-margin_top = 117.0
-margin_right = 291.0
-margin_bottom = 157.0
-rect_rotation = 52.3369
-rect_scale = Vector2( 2.74734, 2.72752 )
-texture = ExtResource( 3 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -8.0
 margin_right = 2062.0
@@ -40,11 +64,12 @@ texture = ExtResource( 5 )
 
 [node name="background" type="TextureRect" parent="."]
 show_behind_parent = true
+material = SubResource( 3 )
 margin_left = -9.0
 margin_top = -7.0
 margin_right = 1527.0
 margin_bottom = 1017.0
-rect_scale = Vector2( 0.21169, 0.178606 )
+rect_scale = Vector2( 0.212927, 0.181243 )
 texture = ExtResource( 2 )
 
 [node name="AtenuateBackground" type="ColorRect" parent="."]

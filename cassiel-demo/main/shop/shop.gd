@@ -53,9 +53,12 @@ func _ready():
 	
 	
 	item_positions = [pos1, pos2, pos3]
-
-	for i in range(0,nb_items):
-		generate_items()
+	
+	if !RunData.shop_items.empty():
+		for i in range(0,nb_items):
+			generate_items()
+	else:
+		canvas_layer.show()
 	
 	get_all_items()
 	RunData.wave_ended = false
@@ -92,16 +95,17 @@ func generate_upgrade_cards():
 	
 
 func generate_items():
-	if _items.empty():
-		_items = _items_full.duplicate()
-		_items.shuffle()
-	var random_item = _items.pop_front()
-	
-	var item = random_item.instance()
-	item.global_position = item_positions[count].global_position
-	items.add_child(item)
-	
-	count += 1
+		if _items.empty():
+			_items = _items_full.duplicate()
+			_items.shuffle()
+		var random_item = _items.pop_front()
+		
+		var item = random_item.instance()
+		item.global_position = item_positions[count].global_position
+		items.add_child(item)
+		
+		count += 1
+		
 
 
 func get_all_items():
